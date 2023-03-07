@@ -1,4 +1,4 @@
 # qb-holsterweapon
 A weapon script for holstering a gun.
 
-Version 1.0.2
+Version 1.0.3
