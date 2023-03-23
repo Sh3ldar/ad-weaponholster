@@ -7,3 +7,7 @@ version '1.0.3'
 client_scripts {
 	'weaponholster.lua',
 }
+
+server_scripts {
+    'server.lua'
+}
