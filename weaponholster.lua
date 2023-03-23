@@ -77,6 +77,22 @@ local Weapons = {
     'WEAPON_COMPACTLAUNCHER',
     'WEAPON_PIPEBOMB',
     'WEAPON_DOUBLEACTION',
+	--Add addons guns under here.
+    --'WEAPON_GLOCK17',
+    --'WEAPON_SCARH',
+    --'WEAPON_REMINGTON',
+    --'WEAPON_MOSSBERG',
+    --'WEAPON_AK47',
+    --'WEAPON_M70',
+    --'WEAPON_DE',
+    --'WEAPON_UZI',
+    --'WEAPON_SLEDGEHAMMER',
+    --'WEAPON_MAC10',
+    --'WEAPON_KATANA',
+    --'WEAPON_M9',
+    --'WEAPON_FNX45',
+    --'WEAPON_MP5',
+    --'WEAPON_1911',
 }
 
 local isLoggedIn = false
