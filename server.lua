@@ -1,6 +1,6 @@
-------------------------------------------------------------------------
---- DO NOT CHANGE ANYTHING BELOW IF YOU DON'T KNOW WHAT YOU'RE DOING ---
-------------------------------------------------------------------------
+-----------------------------------
+--- DO NOT EDIT ANYTHING BELOW! ---
+-----------------------------------
 
 AddEventHandler('onResourceStart', function(resourceName)
     if (GetCurrentResourceName() ~= resourceName) then
