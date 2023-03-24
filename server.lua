@@ -21,14 +21,14 @@ PerformHttpRequest( "https://raw.githubusercontent.com/FiveOPZ/qb-weaponholster/
 
 	local curVer = GetCurrentVersion()
 	
-	print( "^4qb-weaponholster ^0|^5 Current version: " .. curVer )
-	print( "^4qb-weaponholster ^0|^5 Latest recommended version: " .. text )
+	print( "^4qb-weaponholster ^0|^5 Current version: " .. curVer .. "^7" )
+	print( "^4qb-weaponholster ^0|^5 Latest recommended version: " .. text .. "^7" )
 
 	if ( GetCurrentResourceName() ~= "qb-weaponholster" ) then
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!" )
+		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
+		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
+		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
+		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
+		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
 	end
 end )
