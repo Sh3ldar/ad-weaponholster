@@ -11,24 +11,3 @@ AddEventHandler('onResourceStart', function(resourceName)
     print("^4qb-weaponholster ^0|^2 If you need any help contact:^7")
     print("^4qb-weaponholster ^0|^5 Muzzy#8363^7")
 end)
-
-function GetCurrentVersion()
-	return GetResourceMetadata( GetCurrentResourceName(), "version" )
-end
-
-PerformHttpRequest( "https://raw.githubusercontent.com/FiveOPZ/qb-weaponholster/main/version.txt", function( err, text, headers )
-	Citizen.Wait( 2000 )
-
-	local curVer = GetCurrentVersion()
-	
-	print( "^4qb-weaponholster ^0|^5 Current version: " .. curVer .. "^7" )
-	print( "^4qb-weaponholster ^0|^5 Latest recommended version: " .. text .. "^7" )
-
-	if ( GetCurrentResourceName() ~= "qb-weaponholster" ) then
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
-		print( "^4qb-weaponholster ^0|^1 Resource name is not qb-weaponholster please change it!^7" )
-	end
-end )
