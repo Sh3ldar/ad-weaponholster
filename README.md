@@ -14,4 +14,4 @@ Can i add custom guns? Yes, just add them to underneath line 80 on weaponholster
 
 # UPDATES:
 
-Now supports multiple police jobs.
+Now supports multiple police jobs. (weaponholster.lua LINE: 147)
