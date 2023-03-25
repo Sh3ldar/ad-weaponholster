@@ -144,7 +144,7 @@ CreateThread(function()
 		loadAnimDict("reaction@intimidation@cop@unarmed")
 		loadAnimDict("reaction@intimidation@1h")
 		local ped = PlayerPedId()
-		if PlayerData.job and PlayerData.job.name == 'police' then
+		if PlayerData.job and (PlayerData.job.name == 'police' or PlayerData.job.name == 'sheriff') then
 			if not IsPedInAnyVehicle(ped, false) then
 				if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
 					if CheckWeapon(ped) then
