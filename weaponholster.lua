@@ -6,6 +6,8 @@ local QBCore = exports['qb-core']:GetCoreObject()
 local holstered  = true
 local blocked	 = false
 
+local policeJobs = {'police', 'sheriff', 'fbi', 'swat', 'detective'} -- Add your police jobs here.
+
 local Weapons = {
 	'WEAPON_KNIFE',
     'WEAPON_NIGHTSTICK',
@@ -77,7 +79,7 @@ local Weapons = {
     'WEAPON_COMPACTLAUNCHER',
     'WEAPON_PIPEBOMB',
     'WEAPON_DOUBLEACTION',
-	--Add addons guns under here.
+	--CUSTOM WEAPONS
     --'WEAPON_GLOCK17',
     --'WEAPON_SCARH',
     --'WEAPON_REMINGTON',
@@ -144,69 +146,75 @@ CreateThread(function()
 		loadAnimDict("reaction@intimidation@cop@unarmed")
 		loadAnimDict("reaction@intimidation@1h")
 		local ped = PlayerPedId()
-		if PlayerData.job and (PlayerData.job.name == 'police' or PlayerData.job.name == 'sheriff') then
-			if not IsPedInAnyVehicle(ped, false) then
-				if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
-					if CheckWeapon(ped) then
-						if holstered then
-							blocked   = true
-								SetPedCurrentWeaponVisible(ped, 0, 1, 1, 1)
-								TaskPlayAnim(ped, "reaction@intimidation@cop@unarmed", "intro", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0 ) -- Change 50 to 30 if you want to stand still when removing weapon
-									Wait(700)
-								SetPedCurrentWeaponVisible(ped, 1, 1, 1, 1)
-								TaskPlayAnim(ped, "rcmjosh4", "josh_leadout_cop2", 8.0, 2.0, -1, 48, 10, 0, 0, 0 )
-									Wait(400)
-								ClearPedTasks(ped)
-							holstered = false
-						else
-							blocked = false
-						end
-					else
-						if not holstered then
+		local isPolice = false
+		if PlayerData.job then
+			for i = 1, #policeJobs do
+				if PlayerData.job.name == policeJobs[i] then
+					isPolice = true
+					if not IsPedInAnyVehicle(ped, false) then
+						if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
+							if CheckWeapon(ped) then
+								if holstered then
+									blocked   = true
+										SetPedCurrentWeaponVisible(ped, 0, 1, 1, 1)
+										TaskPlayAnim(ped, "reaction@intimidation@cop@unarmed", "intro", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0 ) -- Change 50 to 30 if you want to stand still when removing weapon
+											Wait(700)
+										SetPedCurrentWeaponVisible(ped, 1, 1, 1, 1)
+										TaskPlayAnim(ped, "rcmjosh4", "josh_leadout_cop2", 8.0, 2.0, -1, 48, 10, 0, 0, 0 )
+											Wait(400)
+										ClearPedTasks(ped)
+									holstered = false
+								else
+									blocked = false
+								end
+							else
+								if not holstered then
 
-								TaskPlayAnim(ped, "rcmjosh4", "josh_leadout_cop2", 8.0, 2.0, -1, 48, 10, 0, 0, 0 )
-									Wait(500)
-								TaskPlayAnim(ped, "reaction@intimidation@cop@unarmed", "outro", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0 ) -- Change 50 to 30 if you want to stand still when holstering weapon
-									Wait(60)
-								ClearPedTasks(ped)
-							holstered = true
-						end
-					end
-				else
-					SetCurrentPedWeapon(ped, GetHashKey("WEAPON_UNARMED"), true)
-				end
-			else
-				holstered = true
-			end
-		else
-			if not IsPedInAnyVehicle(ped, false) then
-				if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
-					if CheckWeapon(ped) then
-						if holstered then
-							blocked   = true
-								SetPedCurrentWeaponVisible(ped, 0, 1, 1, 1)
-								TaskPlayAnim(ped, "reaction@intimidation@1h", "intro", 5.0, 1.0, -1, 50, 0, 0, 0, 0 )
-									Wait(1250)
-								SetPedCurrentWeaponVisible(ped, 1, 1, 1, 1)
-									Wait(1700)
-								ClearPedTasks(ped)
-							holstered = false
+										TaskPlayAnim(ped, "rcmjosh4", "josh_leadout_cop2", 8.0, 2.0, -1, 48, 10, 0, 0, 0 )
+											Wait(500)
+										TaskPlayAnim(ped, "reaction@intimidation@cop@unarmed", "outro", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0 ) -- Change 50 to 30 if you want to stand still when holstering weapon
+											Wait(60)
+										ClearPedTasks(ped)
+									holstered = true
+								end
+							end
 						else
-							blocked = false
+							SetCurrentPedWeapon(ped, GetHashKey("WEAPON_UNARMED"), true)
 						end
 					else
-						if not holstered then
-								TaskPlayAnim(ped, "reaction@intimidation@1h", "outro", 8.0, 3.0, -1, 50, 0, 0, 0.125, 0 ) -- Change 50 to 30 if you want to stand still when holstering weapon
-									Wait(1700)
-								ClearPedTasks(ped)
-							holstered = true
-						end
+						holstered = true
 					end
 				else
-					SetCurrentPedWeapon(ped, GetHashKey("WEAPON_UNARMED"), true)
+					if not IsPedInAnyVehicle(ped, false) then
+						if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
+							if CheckWeapon(ped) then
+								if holstered then
+									blocked   = true
+										SetPedCurrentWeaponVisible(ped, 0, 1, 1, 1)
+										TaskPlayAnim(ped, "reaction@intimidation@1h", "intro", 5.0, 1.0, -1, 50, 0, 0, 0, 0 )
+											Wait(1250)
+										SetPedCurrentWeaponVisible(ped, 1, 1, 1, 1)
+											Wait(1700)
+										ClearPedTasks(ped)
+									holstered = false
+								else
+									blocked = false
+								end
+							else
+								if not holstered then
+										TaskPlayAnim(ped, "reaction@intimidation@1h", "outro", 8.0, 3.0, -1, 50, 0, 0, 0.125, 0 ) -- Change 50 to 30 if you want to stand still when holstering weapon
+											Wait(1700)
+										ClearPedTasks(ped)
+									holstered = true
+								end
+							end
+						else
+							SetCurrentPedWeapon(ped, GetHashKey("WEAPON_UNARMED"), true)
+						end
+					else
+						holstered = true
+					end
 				end
-			else
-				holstered = true
 			end
 		end
 	end
