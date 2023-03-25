@@ -1,6 +1,8 @@
 # qb-holsterweapon
 A weapon script for holstering a gun.
 
+Feel free to submit pull requests.
+
 Version 1.0.6
 
 # FAQ:
@@ -12,10 +14,6 @@ Why don't you use qb-smallresources? Because it does not work with all inventori
 Can i add custom guns? Yes, just add them to underneath line 80 on weaponholster.lua
 
 Can i use this with multiple police jobs? Yes (weaponholster.lua LINE 9)
-
-# PR:
-
-Feel Free to submit pull requests.
 
 # Support:
 
