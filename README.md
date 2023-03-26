@@ -5,7 +5,7 @@ Feel free to submit pull requests.
 
 Version 1.0.6
 
-# Installation
+# Installation:
 
 1) Download qb-weaponholster and place it into your resources folder and re-name it 'qb-weaponholster'
 
