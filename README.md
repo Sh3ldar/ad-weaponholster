@@ -8,8 +8,11 @@ Version 1.0.6
 # Installation
 
 1) Download qb-weaponholster and place it into your resources folder and re-name it 'qb-weaponholster'
+
 2) Qb-weaponholster/weaponholster.lua add your addon guns if you have them and add your police jobs.
+
 3) Go to qb-smallresources/client/weapdraw.lua and delete the weapdraw.lua file
+
 4) Restart your server and you're ready to go
 
 # FAQ:
