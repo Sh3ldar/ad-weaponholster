@@ -1,4 +1,4 @@
-# qb-holsterweapon
+# qb-weaponholster
 A weapon script for holstering a gun.
 https://github.com/FiveOPZ/qb-weaponholster
 
