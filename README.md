@@ -28,7 +28,7 @@ Can i use this with multiple police jobs? Yes (weaponholster.lua LINE 9)
 
 # Support:
 
-Need support? https://discord.gg/jCTza43
+Need support? **[Discord](https://discord.gg/jCTza43)**
 
 # Credit:
 
