@@ -4,11 +4,11 @@ https://github.com/FiveOPZ/qb-weaponholster
 
 Feel free to submit pull requests.
 
-Version 1.0.6
+Version 1.0.7
 
 # Installation:
 
-1) Download qb-weaponholster and place it into your resources folder and re-name it 'qb-weaponholster'
+1) Download ad-weaponholster and place it into your resources folder and re-name it 'ad-weaponholster'
 
 2) Qb-weaponholster/weaponholster.lua add your addon guns if you have them and add your police jobs.
 
@@ -24,7 +24,7 @@ Why don't you use qb-smallresources? Because it does not work with all inventori
 
 Can i add custom guns? Yes, just add them to underneath line 80 on weaponholster.lua
 
-Can i use this with multiple police jobs? Yes (weaponholster.lua LINE 9)
+Can i use this with multiple police jobs? Yes (weaponholster.lua LINE 150)
 
 # Support:
 
