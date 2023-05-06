@@ -4,7 +4,7 @@ https://github.com/FiveOPZ/ad-weaponholster
 
 Feel free to submit pull requests.
 
-Version 1.0.7
+Version 1.0.8
 
 # Installation:
 
