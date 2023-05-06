@@ -1,6 +1,6 @@
 # qb-weaponholster
 A weapon script for holstering a gun.
-https://github.com/FiveOPZ/qb-weaponholster
+https://github.com/FiveOPZ/ad-weaponholster
 
 Feel free to submit pull requests.
 
