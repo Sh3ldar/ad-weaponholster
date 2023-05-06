@@ -6,8 +6,6 @@ local QBCore = exports['qb-core']:GetCoreObject()
 local holstered  = true
 local blocked	 = false
 
-local policeJobs = {'police', 'sheriff', 'fbi', 'swat', 'detective'} -- Add your police jobs here.
-
 local Weapons = {
 	'WEAPON_KNIFE',
     'WEAPON_NIGHTSTICK',
@@ -149,7 +147,7 @@ CreateThread(function()
 		local isPolice = false
 		if PlayerData.job then
 			for i = 1, #policeJobs do
-				if PlayerData.job.name == policeJobs[i] then
+				if PlayerData.job.name == "police" or PlayerData.job.name == "ambulance") and v.PlayerData.job.onduty then
 					isPolice = true
 					if not IsPedInAnyVehicle(ped, false) then
 						if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
