@@ -32,4 +32,4 @@ Can i use this with multiple police jobs? Yes (weaponholster.lua LINE 150)
 
 # Credit:
 
-Credit to KingHunter#6969 for helping with the script.
+Credit to MaxAbyss#6969 for helping with the script.
