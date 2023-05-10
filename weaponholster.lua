@@ -97,16 +97,6 @@ local Weapons = {
 
 local isLoggedIn = false
 local PlayerData = {}
-local isPoliceOnDuty = false
-
-RegisterNetEvent('QBCore:Client:OnJobUpdate')
-AddEventHandler('QBCore:Client:OnJobUpdate', function(jobInfo)
-    if jobInfo.name == 'police' then
-        isPoliceOnDuty = jobInfo.onduty
-    else
-        isPoliceOnDuty = false
-    end
-end)
 
 AddStateBagChangeHandler('isLoggedIn', nil, function(_, _, value) -- FiveM native method
     if value then
@@ -157,7 +147,7 @@ CreateThread(function()
 		local isPolice = false
 		if PlayerData.job then
 			for i = 1, #policeJobs do
-				if isPoliceOnDuty then
+				if PlayerData.job.name == "police" and PlayerData.job.onduty then
 					isPolice = true
 					if not IsPedInAnyVehicle(ped, false) then
 						if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
